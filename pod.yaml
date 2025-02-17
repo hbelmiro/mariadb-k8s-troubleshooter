@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mariadb-k8s-troubleshooter
+  labels:
+    app: mariadb-k8s-troubleshooter
+spec:
+  containers:
+    - name: mariadb-k8s-troubleshooter
+      image: quay.io/hbelmiro/mariadb-k8s-troubleshooter:dev-17398065853N
+      command: ["sleep", "infinity"]
+      resources:
+        limits:
+          memory: "256Mi"
+          cpu: "500m"
+        requests:
+          memory: "128Mi"
+          cpu: "250m"
+      stdin: true
+      tty: true
